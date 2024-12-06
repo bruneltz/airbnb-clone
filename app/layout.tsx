@@ -3,6 +3,7 @@ import "./globals.css";
 
 import { Nunito } from "next/font/google"
 import Navbar from "./components/navbar/navbar";
+import Modal from "./components/modals/modal";
 
 // Exposes the class name that can be passed to the body tag
 const font = Nunito({
@@ -22,6 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={font.className}>
+        <Modal isOpen actionLabel="Submit" title="Hello World"/>
         <Navbar />
         {children}
       </body>
