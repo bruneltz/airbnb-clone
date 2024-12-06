@@ -4,7 +4,7 @@ import { AiOutlineMenu } from "react-icons/ai";
 import Avatar from "../avatar";
 import { useCallback, useState } from "react";
 import MenuItem from "./menuitem";
-import useRegisterModal from "../hooks/useRegisterModal";
+import useRegisterModal from "../../hooks/useRegisterModal";
 
 function UserMenu() {
     const registerModal = useRegisterModal();
@@ -14,13 +14,13 @@ function UserMenu() {
     }, [])
 
 
-    return ( 
+    return (
         <div className="relative">
             <div className="flex flex-row items-center gap-3">
                 <div
                     className="hidden md:block text-sm font-semibold py-3 px-4  rounded-full
                     hover:bg-neutral-100 transition cursor-pointer"
-                    onClick={() => {}}
+                    onClick={() => { }}
                 >
                     AirBnB your home
                 </div>
@@ -29,7 +29,7 @@ function UserMenu() {
                     items-center gap-3 rounded-full cursor-pointer hover:shadow-md transition"
                     onClick={toggleOpen}
                 >
-                    <AiOutlineMenu size={18}/>
+                    <AiOutlineMenu size={18} />
                     <div className="hidden md:block">
                         <Avatar />
                     </div>
@@ -40,7 +40,7 @@ function UserMenu() {
                     <div className="flex flex-col cursor-pointer">
                         <>
                             <MenuItem
-                                onClick={() => {}}
+                                onClick={() => { }}
                                 label="Login"
                             />
                             <MenuItem
@@ -52,7 +52,7 @@ function UserMenu() {
                 </div>
             )}
         </div>
-     );
+    );
 }
 
 export default UserMenu;

@@ -4,7 +4,7 @@ import "./globals.css";
 import { Nunito } from "next/font/google"
 import Navbar from "./components/navbar/navbar";
 import RegisterModal from "./components/modals/registermodel";
-import ToasterProvider from "./providers/ToastProvider";
+import ToasterProvider from "./components/providers/ToastProvider";
 
 // Exposes the class name that can be passed to the body tag
 const font = Nunito({
