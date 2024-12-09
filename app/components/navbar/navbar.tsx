@@ -1,11 +1,16 @@
 "use client"
 
+import { User } from "@prisma/client";
 import Container from "../container";
 import Logo from "./logo";
 import Search from "./search";
 import UserMenu from "./usermenu";
 
-function Navbar() {
+interface NavbarProps {
+	currentUser?: User | null;
+}
+
+function Navbar({ currentUser }: NavbarProps) {
 	return (
 		<div className="w-full bg-white z-10 fixed shadow-sm">
 			<div className="py-4 border-b-[1px]">
@@ -22,7 +27,7 @@ function Navbar() {
 					>
 						<Logo />
 						<Search />
-						<UserMenu />
+						<UserMenu currentUser={currentUser} />
 					</div>
 				</Container>
 			</div>

@@ -5,6 +5,8 @@ import { Nunito } from "next/font/google"
 import Navbar from "./components/navbar/navbar";
 import RegisterModal from "./components/modals/registermodel";
 import ToasterProvider from "./components/providers/ToastProvider";
+import LoginModal from "./components/modals/loginmodal";
+import getCurrentUser from "./actions/getCurrentUser";
 
 // Exposes the class name that can be passed to the body tag
 const font = Nunito({
@@ -16,17 +18,20 @@ export const metadata: Metadata = {
   description: "AirBnB Clone",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const currentUser = await getCurrentUser();
+
   return (
     <html lang="en">
       <body className={font.className}>
         <ToasterProvider />
         <RegisterModal />
-        <Navbar />
+        <LoginModal />
+        <Navbar currentUser={currentUser}/>
         {children}
       </body>
     </html>
