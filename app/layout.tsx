@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-import { Nunito } from "next/font/google"
-import Navbar from "./components/navbar/navbar";
-import RegisterModal from "./components/modals/registermodel";
-import ToasterProvider from "./providers/ToastProvider";
-import LoginModal from "./components/modals/loginmodal";
+import { Nunito } from "next/font/google";
 import getCurrentUser from "./actions/getCurrentUser";
+import LoginModal from "./components/modals/loginmodal";
+import RegisterModal from "./components/modals/registermodel";
+import RentModal from "./components/modals/RentModal";
+import Navbar from "./components/navbar/navbar";
+import ToasterProvider from "./providers/ToastProvider";
 
 // Exposes the class name that can be passed to the body tag
 const font = Nunito({
@@ -32,7 +33,8 @@ export default async function RootLayout({
         <ToasterProvider />
         <RegisterModal />
         <LoginModal />
-        <Navbar currentUser={currentUser}/>
+        <RentModal />
+        <Navbar currentUser={currentUser} />
         {children}
       </body>
     </html>
