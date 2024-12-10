@@ -95,8 +95,6 @@ function Categories() {
     const pathname = usePathname();
     const isMainPage = pathname == '/';
 
-    console.log(isMainPage)
-
     if (!isMainPage) {
         return null;
     }
