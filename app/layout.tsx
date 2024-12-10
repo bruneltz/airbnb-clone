@@ -4,7 +4,7 @@ import "./globals.css";
 import { Nunito } from "next/font/google"
 import Navbar from "./components/navbar/navbar";
 import RegisterModal from "./components/modals/registermodel";
-import ToasterProvider from "./components/providers/ToastProvider";
+import ToasterProvider from "./providers/ToastProvider";
 import LoginModal from "./components/modals/loginmodal";
 import getCurrentUser from "./actions/getCurrentUser";
 
